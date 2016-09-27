@@ -183,6 +183,7 @@ var ConversationPanel = (function() {
             }]
           }]
         };
+        console.log("Pushing Message "+Common.buildDomElement(messageJson));
         messageArray.push(Common.buildDomElement(messageJson));
       }
     });
@@ -216,7 +217,7 @@ var ConversationPanel = (function() {
       if (latestResponse) {
         context = latestResponse.context;
       }
-
+console.log("Think Invoking API "+inputBox.value);
       // Send the user message
       Api.sendRequest(inputBox.value, context);
 
