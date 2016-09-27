@@ -214,15 +214,17 @@ var ConversationPanel = (function() {
       // Retrieve the context from the previous server response
       var context;
       var latestResponse = Api.getResponsePayload();
+      console.log("Latest Response "+latestResponse);
       if (latestResponse) {
         context = latestResponse.context;
       }
-console.log("Think Invoking API "+inputBox.value);
+       console.log("Latest Context "+context);
+       console.log("Think Invoking API "+inputBox.value);
       // Send the user message
       Api.sendRequest(inputBox.value, context);
 
       // Clear input box for further messages
-      inputBox.value = '';
+      inputBox.value = 'Type Again';
       Common.fireEvent(inputBox, 'input');
     }
   }
